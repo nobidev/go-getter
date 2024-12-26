@@ -264,7 +264,11 @@ func (c *Client) Get() error {
 	if mode == ClientModeFile {
 		getFile := true
 		if checksum != nil {
-			if err := checksum.checksum(dst); err == nil {
+			csDst := dst
+			if decompressDst != "" {
+				csDst = decompressDst
+			}
+			if err := checksum.checksum(csDst); err == nil {
 				// don't get the file if the checksum of dst is correct
 				getFile = false
 			}
