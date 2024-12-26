@@ -241,7 +241,11 @@ func (c *Client) get(ctx context.Context, req *Request, g Getter) (*GetResult, *
 	if req.GetMode == ModeFile {
 		getFile := true
 		if checksum != nil {
-			if err := checksum.Checksum(req.Dst); err == nil {
+			dst := req.Dst
+			if decompressDst != "" {
+				dst = decompressDst
+			}
+			if err := checksum.Checksum(dst); err == nil {
 				// don't get the file if the checksum of dst is correct
 				getFile = false
 			}
