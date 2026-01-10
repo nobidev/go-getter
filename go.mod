@@ -18,7 +18,7 @@ require (
 	github.com/mattn/go-runewidth v0.0.4 // indirect
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/mitchellh/go-testing-interface v1.14.1
-	github.com/ulikunitz/xz v0.5.10
+	github.com/ulikunitz/xz v0.5.14
 	golang.org/x/oauth2 v0.1.0
 	google.golang.org/api v0.100.0
 	google.golang.org/genproto v0.0.0-20221025140454-527a21cfbd71 // indirect
